@@ -24,7 +24,7 @@ on:
       testFolderPath:
         # passticket input from the user.
         description: Test Location Path
-        default: C:\Users\saiganta\git\CWKTCOBX_GIT_REPO\CWKTCOBX_GIT_TEST\Tests\Scenarios
+        default: C:\Users\saiganta\git\CWKTCOBX_DEMO_REPO\CWKTCOBX_GIT_TEST\Tests\Scenarios
         required: true
       workspace:
         # Workspcae location of the customer input from the user.
