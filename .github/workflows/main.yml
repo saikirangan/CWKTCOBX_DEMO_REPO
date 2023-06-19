@@ -9,7 +9,7 @@ on:
       clipath:
         # Host/IP adress input from users
         description: CLI Execution path
-        default: C:\Users\saiganta
+        default: C:\Users\saiganta\topaz\WorkbenchCLI
         required: true
       hciconnection:
         # Host/IP adress input from users
@@ -29,7 +29,7 @@ on:
       workspace:
         # Workspcae location of the customer input from the user.
         description: CLI path
-        default: C:\Users\saiganta
+        default: C:\Users\saiganta\topaz\WorkbenchCLI\workspace
         required: true        
       repository_server:
         # repository server input from the user.
