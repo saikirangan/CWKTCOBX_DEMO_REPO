@@ -9,7 +9,7 @@ on:
       clipath:
         # Host/IP adress input from users
         description: CLI Execution path
-        default: C:\Users\saiganta\topaz\WorkbenchCLI
+        default: C:\Users\saiganta\topaz\WorkbenchCLI\TotalTestCLI.bat
         required: true
       hciconnection:
         # Host/IP adress input from users
