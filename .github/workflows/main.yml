@@ -9,7 +9,7 @@ on:
       clipath:
         # Host/IP adress input from users
         description: CLI Execution path
-        default: C:\Users\saiganta\topaz\WorkbenchCLI
+        default: "C:\\Users\\saiganta\\topaz\\WorkbenchCLI"
         required: true
       hciconnection:
         # Host/IP adress input from users
@@ -24,28 +24,28 @@ on:
       testFolderPath:
         # passticket input from the user.
         description: Test Location Path
-        default: C:\Users\saiganta\git\CWKTCOBX_DEMO_REPO\CWKTCOBX_GIT_TEST
+        default: "C:\\Users\\sandhata\\Compuware\\Workbench\\workspace_02\\Hello World UT\\Tests\\Scenarios"
         required: true
       testScenario:
         # Test Scenario name
         description: Test Scenario Name
-        default: "CWKTCOBX_Scenario.testscenario"
+        default: "PGM01_Scenario.testscenario"
         required: true
-      jclpath:
-        # jcl runner
-        description: jcl runner name
-        default: Runner.jcl
+      jclFile:
+        # JCL File Name
+        description: JCL File Name
+        default: "C:\\Users\\sandhata\\Compuware\\Workbench\\workspace_02\\Hello World UT\\Tests\\JCL\\TTTRUNNER.jcl"
         required: true
       workspace:
         # Workspcae location of the customer input from the user.
         description: CLI path
-        default: C:\Users\saiganta\topaz\WorkbenchCLI\workspace
+        default: "C:\\Topaz\\WorkbenchCLI\\workspace"
         required: true        
       repository_server:
         # repository server input from the user.
         description: Repository Server
         default: "http://10.10.1.174:48226/"
-        required: true
+        required: false
       userId:
         # repository server input from the user.
         description: HCI User ID
@@ -67,5 +67,4 @@ jobs:
       # Runs a single command using the runners shell
       - run: echo "${{ secrets.HCI_PASSWORD }}"
       - name: Calling the CLI function
-        run: ${{ inputs.clipath }}\\TotalTestCLI.bat -command=runtest -data "${{ inputs.workspace }}" -host "${{ inputs.hciconnection }}" -port "${{ inputs.port }}" -u "${{ inputs.userId }}" -p "${{ secrets.HCI_PASSWORD }}" -s "${{ inputs.repository_server }}" -cesu "${{ inputs.userId }}" -cesp "${{ secrets.HCI_PASSWORD }}" -project "${{ inputs.testFolderPath }}" -ts "${{inputs.testScenario}}" -jcl "${{inputs.jclpath}}" -R -G -v "6" -l "jenkins" -loglevel "info"
-     
+        run: ${{ inputs.clipath }}\\TotalTestFTCLI.bat -host "${{ inputs.hciconnection }}" -port "${{ inputs.port }}" -u "${{ inputs.userId}}" -p "${{ secrets.HCI_PASSWORD }}" -file "${{ inputs.testFolderPath }}" --runner-jcl "${{inputs.jclFile}}"       
