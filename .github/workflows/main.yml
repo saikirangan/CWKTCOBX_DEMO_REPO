@@ -24,22 +24,22 @@ on:
       testFolderPath:
         # passticket input from the user.
         description: Test Location Path
-        default: "C:\\Users\\sandhata\\Compuware\\Workbench\\workspace_02\\Hello World UT\\Tests\\Scenarios"
+        default: "C:\\User\\saiganta\\git\\CWKTCOBX_DEMO_REPO\\CWKTCOBX_GIT_TEST\\Tests\\Scenarios"
         required: true
       testScenario:
         # Test Scenario name
         description: Test Scenario Name
-        default: "PGM01_Scenario.testscenario"
+        default: "CWKTCOBX_Scenario.testscenario"
         required: true
       jclFile:
         # JCL File Name
         description: JCL File Name
-        default: "C:\\Users\\sandhata\\Compuware\\Workbench\\workspace_02\\Hello World UT\\Tests\\JCL\\TTTRUNNER.jcl"
+        default: "C:\\Users\\saiganta\\git\\CWKTCOBX_DEMO_REPO\\CWKTCOBX_GIT_TEST\\Tests\\JCL\\TTTRUNNER.jcl"
         required: true
       workspace:
         # Workspcae location of the customer input from the user.
         description: CLI path
-        default: "C:\\Topaz\\WorkbenchCLI\\workspace"
+        default: "C:\\Users\\saiganta\\topaz\\WorkbenchCLI\\workspace"
         required: true        
       repository_server:
         # repository server input from the user.
