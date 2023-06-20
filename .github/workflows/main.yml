@@ -9,7 +9,7 @@ on:
       clipath:
         # Host/IP adress input from users
         description: CLI Execution path
-        default: "C:\\Topaz\\WorkbenchCLI"
+        default: C:\Topaz\WorkbenchCLI
         required: true
       hciconnection:
         # Host/IP adress input from users
@@ -31,10 +31,15 @@ on:
         description: Test Scenario Name
         default: "CWKTCOBX_Scenario.testscenario"
         required: true
+      jclpath:
+        # jcl runner
+        description: jcl runner name
+        default: Runner.jcl
+        required: true
       workspace:
         # Workspcae location of the customer input from the user.
         description: CLI path
-        default: "C:\\Topaz\\WorkbenchCLI\\workspace"
+        default: C:\Topaz\WorkbenchCLI\workspace
         required: true        
       repository_server:
         # repository server input from the user.
@@ -62,5 +67,5 @@ jobs:
       # Runs a single command using the runners shell
       - run: echo "${{ secrets.HCI_PASSWORD }}"
       - name: Calling the CLI function
-        run: ${{ inputs.clipath }}\\TotalTestCLI.bat -command=runtest -data "${{ inputs.workspace }}" -host "${{ inputs.hciconnection }}" -port "${{ inputs.port }}" -u "${{ inputs.userId }}" -p "${{ secrets.HCI_PASSWORD }}" -s "${{ inputs.repository_server }}" -cesu "${{ inputs.userId }}" -cesp "${{ secrets.HCI_PASSWORD }}" -project "${{ inputs.testFolderPath }}" -ts "${{inputs.testScenario}}" -R -G -v "6" -l "jenkins" -loglevel "info"
+        run: ${{ inputs.clipath }}\\TotalTestCLI.bat -command=runtest -data "${{ inputs.workspace }}" -host "${{ inputs.hciconnection }}" -port "${{ inputs.port }}" -u "${{ inputs.userId }}" -p "${{ secrets.HCI_PASSWORD }}" -s "${{ inputs.repository_server }}" -cesu "${{ inputs.userId }}" -cesp "${{ secrets.HCI_PASSWORD }}" -project "${{ inputs.testFolderPath }}" -ts "${{inputs.testScenario}}" -jcl "${{inputs.jclpath}}" -R -G -v "6" -l "jenkins" -loglevel "info"
      
