@@ -9,7 +9,7 @@ on:
       clipath:
         # Host/IP adress input from users
         description: CLI Execution path
-        default: C:\Users\saiganta\topaz\WorkbenchCLI
+        default: C:\Topaz\WorkbenchCLI
         required: true
       hciconnection:
         # Host/IP adress input from users
@@ -24,7 +24,7 @@ on:
       testFolderPath:
         # passticket input from the user.
         description: Test Location Path
-        default: "C:\\User\\saiganta\\git\\CWKTCOBX_DEMO_REPO\\CWKTCOBX_GIT_TEST\\Tests\\Scenarios"
+        default: C:\Topaz\WorkbenchCLI\CWKTCOBX_DEMO_REPO1\CWKTCOBX_GIT_TEST\Tests\Scenarios
         required: true
       testScenario:
         # Test Scenario name
@@ -34,12 +34,12 @@ on:
       jclFile:
         # JCL File Name
         description: JCL File Name
-        default: "C:\\Users\\saiganta\\git\\CWKTCOBX_DEMO_REPO\\CWKTCOBX_GIT_TEST\\Tests\\JCL\\RUNNER.jcl"
+        default: C:\Topaz\WorkbenchCLI\CWKTCOBX_DEMO_REPO1\CWKTCOBX_GIT_TEST\Tests\JCL
         required: true
       workspace:
         # Workspcae location of the customer input from the user.
         description: CLI path
-        default: C:\Users\saiganta\topaz\WorkbenchCLI\workspace
+        default: C:\Topaz\WorkbenchCLI\workspace
         required: true        
       repository_server:
         # repository server input from the user.
